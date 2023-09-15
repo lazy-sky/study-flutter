@@ -95,3 +95,7 @@ class _WebViewAppState extends State<WebViewApp> {
 7. NavigationDelegate로 탐색 추적
 
 - `WebView`는 앱에서 `WebView` 위젯의 페이지 탐색을 추적하고 제어할 수 있도록 하는 `NavigationDelegate`를 제공한다. 탐색이 `WebView`에서 시작될 때(예: 사용자가 링크를 클릭할 때) `NavigationDelegate`가 호출된다. `NavigationDelegate` 콜백은 `WebView`를 탐색으로 진행할지 제어하는 데 사용할 수 있다.
+
+8. AppBar에 메뉴 버튼 추가
+
+- 앱을 실행하고 YouTube로 이동 메뉴 항목을 탭하면 탐색 컨트롤러가 YouTube로 이동을 차단했다는 내용의 스낵바가 표시된다.
