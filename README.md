@@ -78,3 +78,8 @@ class _WebViewAppState extends State<WebViewApp> {
   }
 }
 ```
+
+5. 페이지 로드 이벤트 수신 대기
+
+- `WebView` 위젯을 `Stack`에 래핑하여 페이지 로드 비율이 100% 미만일 때 조건부로 `WebView`를 `LinearProgressIndicator`로 오버레이합니다. 이는 시간이 지남에 따라 변화하는 프로그램 상태를 포함하므로 `StatefulWidget`과 연결된 `State` 클래스에 이 상태를 저장한다.
+- 앱을 실행할 때 네트워크 조건과 브라우저가 이동 중인 페이지를 캐시했는지에 따라 페이지 로드 표시기가 `WebView` 콘텐츠 영역 상단에 오버레이된다.

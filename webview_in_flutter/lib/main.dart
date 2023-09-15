@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+
+import 'src/web_view_stack.dart';
 
 void main() {
   runApp(
     const MaterialApp(
-      // theme: ThemeData(useMaterial3: true),
       home: WebViewApp(),
     ),
   );
@@ -18,26 +18,13 @@ class WebViewApp extends StatefulWidget {
 }
 
 class _WebViewAppState extends State<WebViewApp> {
-  late final WebViewController controller;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter WebView'),
+        title: const Text('My First Flutter WebView'),
       ),
-      body: WebViewWidget(
-        controller: controller,
-      ),
+      body: const WebViewStack(),
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    controller = WebViewController()
-      ..loadRequest(
-        Uri.parse('https://pick-color.netlify.app/'),
-      );
   }
 }
