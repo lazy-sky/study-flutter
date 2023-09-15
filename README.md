@@ -91,3 +91,7 @@ class _WebViewAppState extends State<WebViewApp> {
 - `WebView`가 작동하는 것도 한 방법이지만 페이지 기록을 통해 앞뒤로 이동하고 페이지를 새로고침하는 것도 도움이 될 수 있다. 다행히 `WebViewController`를 사용하면 앱에 이 기능을 추가할 수 있다.
 - 이 위젯은 `FutureBuilder<T>` 위젯을 사용하여 컨트롤러를 사용할 수 있게 되면 적절히 다시 페인팅한다. 컨트롤러를 사용할 수 있을 때까지 기다리는 동안 아이콘 세 개의 행이 렌더링되지만 컨트롤러가 나타나면 `controller`를 사용하여 기능을 구현하는 `onPressed` 핸들러가 포함된 `IconButton`의 `Row`로 바뀐다.
 - 업데이트된 `WebViewStack`과 새로 만든 `NavigationControls`가 준비됐으니 이제 업데이트된 `WebViewApp`에 모두 합쳐야 한다. 이전 과정에서는 `Completer<T>`를 사용하는 방법을 알아봤지만 실제로 생성한 위치는 아니었다. 이 앱의 위젯 트리 상단 근처에 `WebViewApp`이 있으면 이 수준에서 만드는 것이 좋다.
+
+7. NavigationDelegate로 탐색 추적
+
+- `WebView`는 앱에서 `WebView` 위젯의 페이지 탐색을 추적하고 제어할 수 있도록 하는 `NavigationDelegate`를 제공한다. 탐색이 `WebView`에서 시작될 때(예: 사용자가 링크를 클릭할 때) `NavigationDelegate`가 호출된다. `NavigationDelegate` 콜백은 `WebView`를 탐색으로 진행할지 제어하는 데 사용할 수 있다.
